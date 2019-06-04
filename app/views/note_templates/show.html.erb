@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Note #<%= @note.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/notes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link note start -->
+      <div class="col">
+        <a href="/notes/<%= @note.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit note
+        </a>
+      </div>
+      <!-- Edit link note end -->
+
+      <!-- Delete link note start -->
+      <div class="col">
+        <a href="/delete_note/<%= @note.id %>" class="btn btn-block btn-outline-secondary">
+          Delete note
+        </a>
+      </div>
+      <!-- Delete link note end -->
+    </div>
+
+    <dl>
+      <dt>
+        Body
+      </dt>
+      <!-- Display body start -->
+      <dd>
+        <%= @note.body %>
+      </dd>
+      <!-- Display body end -->
+
+      <dt>
+        Commenter
+      </dt>
+      <!-- Display commenter_id start -->
+      <dd>
+        <%= @note.commenter_id %>
+      </dd>
+      <!-- Display commenter_id end -->
+
+      <dt>
+        Connection
+      </dt>
+      <!-- Display connection_id start -->
+      <dd>
+        <%= @note.connection_id %>
+      </dd>
+      <!-- Display connection_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@note.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@note.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,57 @@
+<h1>
+  Add a new note
+</h1>
+
+
+<hr>
+
+<!-- Form note start -->
+<form action="/create_note" method="post">
+<!-- Form note end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <textarea id="body" name="body" class="form-control" rows="3"></textarea>
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for commenter_id start -->
+  <div class="form-group">
+    <label for="commenter_id">
+      Commenter
+    </label>
+
+    <!-- Input for commenter_id start -->
+    <input type="text" id="commenter_id" name="commenter_id" class="form-control">
+    <!-- Input for commenter_id end -->
+  </div>
+  <!-- Label and input for commenter_id end -->
+
+  <!-- Label and input for connection_id start -->
+  <div class="form-group">
+    <label for="connection_id">
+      Connection
+    </label>
+
+    <!-- Input for connection_id start -->
+    <input type="text" id="connection_id" name="connection_id" class="form-control">
+    <!-- Input for connection_id end -->
+  </div>
+  <!-- Label and input for connection_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create note
+  </button>
+</form>
+
+<hr>
+
+<a href="/notes">
+  Go back
+</a>

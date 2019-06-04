@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All notes
+    </h1>
+
+    <a href="/notes/new" class="btn btn-block btn-outline-secondary">
+      Add a new note
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Body
+        </th>
+
+        <th>
+          Commenter
+        </th>
+
+        <th>
+          Connection
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @notes.each do |note| %>
+      <tr>
+        <!-- Display note.id start -->
+        <td>
+          <%= note.id %>
+        </td>
+        <!-- Display note.id end -->
+
+        <!-- Display note.body start -->
+        <td>
+          <%= note.body %>
+        </td>
+        <!-- Display note.body end -->
+
+        <!-- Display note.commenter_id start -->
+        <td>
+          <%= note.commenter_id %>
+        </td>
+        <!-- Display note.commenter_id end -->
+
+        <!-- Display note.connection_id start -->
+        <td>
+          <%= note.connection_id %>
+        </td>
+        <!-- Display note.connection_id end -->
+
+        <!-- Display note.created_at start -->
+        <td>
+          <%= time_ago_in_words(note.created_at) %> ago
+        </td>
+        <!-- Display note.created_at end -->
+
+        <!-- Display note.updated_at start -->
+        <td>
+          <%= time_ago_in_words(note.updated_at) %> ago
+        </td>
+        <!-- Display note.updated_at end -->
+
+        <td>
+          <a href="/notes/<%= note.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

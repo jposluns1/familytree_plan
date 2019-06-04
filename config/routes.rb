@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Note resource:
+
+  # CREATE
+  get("/notes/new", { :controller => "notes", :action => "new_form" })
+  post("/create_note", { :controller => "notes", :action => "create_row" })
+
+  # READ
+  get("/notes", { :controller => "notes", :action => "index" })
+  get("/notes/:id_to_display", { :controller => "notes", :action => "show" })
+
+  # UPDATE
+  get("/notes/:prefill_with_id/edit", { :controller => "notes", :action => "edit_form" })
+  post("/update_note/:id_to_modify", { :controller => "notes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_note/:id_to_remove", { :controller => "notes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Connection resource:
 
   # CREATE
