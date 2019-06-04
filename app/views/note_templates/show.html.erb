@@ -13,17 +13,21 @@
 
       <!-- Edit link note start -->
       <div class="col">
-        <a href="/notes/<%= @note.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit note
-        </a>
+        <% if current_user == @note.user %>
+          <a href="/notes/<%= @note.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit note
+          </a>
+        <% end %>
       </div>
       <!-- Edit link note end -->
 
       <!-- Delete link note start -->
       <div class="col">
-        <a href="/delete_note/<%= @note.id %>" class="btn btn-block btn-outline-secondary">
-          Delete note
-        </a>
+        <% if current_user == @note.user %>
+          <a href="/delete_note/<%= @note.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete note
+          </a>
+        <% end %>
       </div>
       <!-- Delete link note end -->
     </div>

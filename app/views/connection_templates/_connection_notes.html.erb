@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_note_from_connection/<%= note.id %>">
-          Delete
-        </a>
+        <%if current_user == note.user %>
+          <a href="/delete_note_from_connection/<%= note.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
