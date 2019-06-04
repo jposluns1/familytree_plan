@@ -49,7 +49,7 @@ class ConnectionsController < ApplicationController
     @connection.image = params.fetch("image") if params.key?("image")
     @connection.location = params.fetch("location")
     @connection.birthday = params.fetch("birthday")
-    @connection.user_id = params.fetch("user_id")
+    
 
     if @connection.valid?
       @connection.save
