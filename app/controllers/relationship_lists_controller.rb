@@ -1,6 +1,6 @@
 class RelationshipListsController < ApplicationController
   def index
-    @relationship_lists = RelationshipList.all
+    @relationship_lists = RelationshipList.page(params[:page]).per(10)
 
     render("relationship_list_templates/index.html.erb")
   end
