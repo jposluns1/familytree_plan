@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Connection resource:
+
+  # CREATE
+  get("/connections/new", { :controller => "connections", :action => "new_form" })
+  post("/create_connection", { :controller => "connections", :action => "create_row" })
+
+  # READ
+  get("/connections", { :controller => "connections", :action => "index" })
+  get("/connections/:id_to_display", { :controller => "connections", :action => "show" })
+
+  # UPDATE
+  get("/connections/:prefill_with_id/edit", { :controller => "connections", :action => "edit_form" })
+  post("/update_connection/:id_to_modify", { :controller => "connections", :action => "update_row" })
+
+  # DELETE
+  get("/delete_connection/:id_to_remove", { :controller => "connections", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 

@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @connection.errors.any? %>
+  <% @connection.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit connection #<%= @connection.id %>
+</h1>
+
+<hr>
+
+<!-- Form connection start -->
+<form action="/update_connection/<%= @connection.id %>" method="post">
+<!-- Form connection end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @connection.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control" value="<%= @connection.image %>">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control" value="<%= @connection.location %>">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for birthday start -->
+  <div class="form-group">
+    <label for="birthday">
+      Birthday
+    </label>
+
+    <!-- Input for birthday start -->
+    <input type="text" id="birthday" name="birthday" class="form-control" value="<%= @connection.birthday %>">
+    <!-- Input for birthday end -->
+  </div>
+  <!-- Label and input for birthday end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @connection.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update connection
+  </button>
+</form>
+
+<hr>
+
+<a href="/connections">
+  Go back
+</a>
