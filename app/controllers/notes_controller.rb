@@ -59,7 +59,7 @@ class NotesController < ApplicationController
     @note = Note.find(params.fetch("id_to_modify"))
 
     @note.body = params.fetch("body")
-    @note.commenter_id = params.fetch("commenter_id")
+    
     @note.connection_id = params.fetch("connection_id")
 
     if @note.valid?
