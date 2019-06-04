@@ -1,6 +1,8 @@
 class Note < ApplicationRecord
   # Direct associations
 
+  belongs_to :connection
+
   belongs_to :user,
              :foreign_key => "commenter_id"
 

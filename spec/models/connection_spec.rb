@@ -4,6 +4,8 @@ RSpec.describe Connection, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:notes) }
+
     it { should belong_to(:user) }
 
     end
