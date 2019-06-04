@@ -12,6 +12,8 @@ RSpec.describe Note, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:commenter_id) }
+
     it { should validate_presence_of(:connection_id) }
       
     end
