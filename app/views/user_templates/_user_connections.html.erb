@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.connections.each do |connection| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/connections/<%= connection.id %>">
           <%= connection.name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

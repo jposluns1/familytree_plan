@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @note.present? %>
   <% if @note.errors.any? %>
     <% @note.errors.full_messages.each do |message| %>
@@ -16,39 +15,25 @@
 
 <hr>
 
-<!-- Form note start -->
 <form action="/create_note" method="post">
-<!-- Form note end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <textarea id="body" name="body" class="form-control" rows="3"><%= @note.body %></textarea>
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
-  <!-- Label and input for commenter_id start -->
-  <!-- Input for "commenter_id" start -->
   <input type="hidden" name="commenter_id" value="<%= current_user.id %>">
-  <!-- Input for "commenter_id" end -->
-  <!-- Label and input for commenter_id end -->
 
-  <!-- Label and input for connection_id start -->
   <div class="form-group">
     <label for="connection_id">
       Connection
     </label>
 
-    <!-- Input for connection_id start -->
     <%= select_tag(:connection_id, options_from_collection_for_select(Connection.all, :id, :name, @note.connection_id), :class => "form-control") %>
-    <!-- Input for connection_id end -->
   </div>
-  <!-- Label and input for connection_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create note

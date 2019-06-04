@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @relationship_list.present? %>
   <% if @relationship_list.errors.any? %>
     <% @relationship_list.errors.full_messages.each do |message| %>
@@ -16,213 +15,143 @@
 
 <hr>
 
-<!-- Form relationship_list start -->
 <form action="/create_relationship_list" method="post">
-<!-- Form relationship_list end -->
 
-  <!-- Label and input for connection_id start -->
   <div class="form-group">
     <label for="connection_id">
       Connection
     </label>
 
-    <!-- Input for connection_id start -->
     <%= select_tag(:connection_id, options_from_collection_for_select(Connection.all, :id, :name, @relationship_list.connection_id), :class => "form-control") %>
-    <!-- Input for connection_id end -->
   </div>
-  <!-- Label and input for connection_id end -->
 
-  <!-- Label and input for mother_id start -->
   <div class="form-group">
     <label for="mother_id">
       Mother
     </label>
 
-    <!-- Input for mother_id start -->
     <input type="text" id="mother_id" name="mother_id" class="form-control" value="<%= @relationship_list.mother_id %>">
-    <!-- Input for mother_id end -->
   </div>
-  <!-- Label and input for mother_id end -->
 
-  <!-- Label and input for father_id start -->
   <div class="form-group">
     <label for="father_id">
       Father
     </label>
 
-    <!-- Input for father_id start -->
     <input type="text" id="father_id" name="father_id" class="form-control" value="<%= @relationship_list.father_id %>">
-    <!-- Input for father_id end -->
   </div>
-  <!-- Label and input for father_id end -->
 
-  <!-- Label and input for child1_id start -->
   <div class="form-group">
     <label for="child1_id">
       Child1
     </label>
 
-    <!-- Input for child1_id start -->
     <input type="text" id="child1_id" name="child1_id" class="form-control" value="<%= @relationship_list.child1_id %>">
-    <!-- Input for child1_id end -->
   </div>
-  <!-- Label and input for child1_id end -->
 
-  <!-- Label and input for child2_id start -->
   <div class="form-group">
     <label for="child2_id">
       Child2
     </label>
 
-    <!-- Input for child2_id start -->
     <input type="text" id="child2_id" name="child2_id" class="form-control" value="<%= @relationship_list.child2_id %>">
-    <!-- Input for child2_id end -->
   </div>
-  <!-- Label and input for child2_id end -->
 
-  <!-- Label and input for child3_id start -->
   <div class="form-group">
     <label for="child3_id">
       Child3
     </label>
 
-    <!-- Input for child3_id start -->
     <input type="text" id="child3_id" name="child3_id" class="form-control" value="<%= @relationship_list.child3_id %>">
-    <!-- Input for child3_id end -->
   </div>
-  <!-- Label and input for child3_id end -->
 
-  <!-- Label and input for child4_id start -->
   <div class="form-group">
     <label for="child4_id">
       Child4
     </label>
 
-    <!-- Input for child4_id start -->
     <input type="text" id="child4_id" name="child4_id" class="form-control" value="<%= @relationship_list.child4_id %>">
-    <!-- Input for child4_id end -->
   </div>
-  <!-- Label and input for child4_id end -->
 
-  <!-- Label and input for child5_id start -->
   <div class="form-group">
     <label for="child5_id">
       Child5
     </label>
 
-    <!-- Input for child5_id start -->
     <input type="text" id="child5_id" name="child5_id" class="form-control" value="<%= @relationship_list.child5_id %>">
-    <!-- Input for child5_id end -->
   </div>
-  <!-- Label and input for child5_id end -->
 
-  <!-- Label and input for step_mother_id start -->
   <div class="form-group">
     <label for="step_mother_id">
       Step mother
     </label>
 
-    <!-- Input for step_mother_id start -->
     <input type="text" id="step_mother_id" name="step_mother_id" class="form-control" value="<%= @relationship_list.step_mother_id %>">
-    <!-- Input for step_mother_id end -->
   </div>
-  <!-- Label and input for step_mother_id end -->
 
-  <!-- Label and input for step_father_id start -->
   <div class="form-group">
     <label for="step_father_id">
       Step father
     </label>
 
-    <!-- Input for step_father_id start -->
     <input type="text" id="step_father_id" name="step_father_id" class="form-control" value="<%= @relationship_list.step_father_id %>">
-    <!-- Input for step_father_id end -->
   </div>
-  <!-- Label and input for step_father_id end -->
 
-  <!-- Label and input for sibling1_id start -->
   <div class="form-group">
     <label for="sibling1_id">
       Sibling1
     </label>
 
-    <!-- Input for sibling1_id start -->
     <input type="text" id="sibling1_id" name="sibling1_id" class="form-control" value="<%= @relationship_list.sibling1_id %>">
-    <!-- Input for sibling1_id end -->
   </div>
-  <!-- Label and input for sibling1_id end -->
 
-  <!-- Label and input for sibling2_id start -->
   <div class="form-group">
     <label for="sibling2_id">
       Sibling2
     </label>
 
-    <!-- Input for sibling2_id start -->
     <input type="text" id="sibling2_id" name="sibling2_id" class="form-control" value="<%= @relationship_list.sibling2_id %>">
-    <!-- Input for sibling2_id end -->
   </div>
-  <!-- Label and input for sibling2_id end -->
 
-  <!-- Label and input for sibling3_id start -->
   <div class="form-group">
     <label for="sibling3_id">
       Sibling3
     </label>
 
-    <!-- Input for sibling3_id start -->
     <input type="text" id="sibling3_id" name="sibling3_id" class="form-control" value="<%= @relationship_list.sibling3_id %>">
-    <!-- Input for sibling3_id end -->
   </div>
-  <!-- Label and input for sibling3_id end -->
 
-  <!-- Label and input for sibling4_id start -->
   <div class="form-group">
     <label for="sibling4_id">
       Sibling4
     </label>
 
-    <!-- Input for sibling4_id start -->
     <input type="text" id="sibling4_id" name="sibling4_id" class="form-control" value="<%= @relationship_list.sibling4_id %>">
-    <!-- Input for sibling4_id end -->
   </div>
-  <!-- Label and input for sibling4_id end -->
 
-  <!-- Label and input for partner_id start -->
   <div class="form-group">
     <label for="partner_id">
       Partner
     </label>
 
-    <!-- Input for partner_id start -->
     <input type="text" id="partner_id" name="partner_id" class="form-control" value="<%= @relationship_list.partner_id %>">
-    <!-- Input for partner_id end -->
   </div>
-  <!-- Label and input for partner_id end -->
 
-  <!-- Label and input for husband_id start -->
   <div class="form-group">
     <label for="husband_id">
       Husband
     </label>
 
-    <!-- Input for husband_id start -->
     <input type="text" id="husband_id" name="husband_id" class="form-control" value="<%= @relationship_list.husband_id %>">
-    <!-- Input for husband_id end -->
   </div>
-  <!-- Label and input for husband_id end -->
 
-  <!-- Label and input for wife_id start -->
   <div class="form-group">
     <label for="wife_id">
       Wife
     </label>
 
-    <!-- Input for wife_id start -->
     <input type="text" id="wife_id" name="wife_id" class="form-control" value="<%= @relationship_list.wife_id %>">
-    <!-- Input for wife_id end -->
   </div>
-  <!-- Label and input for wife_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create relationship list

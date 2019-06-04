@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @connection.notes.each do |note| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/notes/<%= note.id %>">
           <%= note.body %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == note.user %>
           <a href="/delete_note_from_connection/<%= note.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="connection_notes_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "connection_templates/connection_notes_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

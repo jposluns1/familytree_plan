@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "connection_templates/connections_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "connection_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -70,37 +66,26 @@
 
       <% @connections.each do |connection| %>
       <tr>
-        <!-- Display connection.id start -->
         <td>
           <%= connection.id %>
         </td>
-        <!-- Display connection.id end -->
 
-        <!-- Display connection.name start -->
         <td>
           <%= connection.name %>
         </td>
-        <!-- Display connection.name end -->
 
-        <!-- Display connection.image start -->
         <td>
           <img src='<%= connection.image %>' class='img-fluid'>
         </td>
-        <!-- Display connection.image end -->
 
-        <!-- Display connection.location start -->
         <td>
           <%= connection.location %>
         </td>
-        <!-- Display connection.location end -->
 
-        <!-- Display connection.birthday start -->
         <td>
           <%= connection.birthday %>
         </td>
-        <!-- Display connection.birthday end -->
 
-        <!-- Display connection.user_id start -->
         <td>
           <% if connection.user.present? %>
             <a href="/users/<%= connection.user.id %>">
@@ -108,19 +93,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display connection.user_id end -->
 
-        <!-- Display connection.created_at start -->
         <td>
           <%= time_ago_in_words(connection.created_at) %> ago
         </td>
-        <!-- Display connection.created_at end -->
 
-        <!-- Display connection.updated_at start -->
         <td>
           <%= time_ago_in_words(connection.updated_at) %> ago
         </td>
-        <!-- Display connection.updated_at end -->
 
         <td>
           <a href="/connections/<%= connection.id %>">
