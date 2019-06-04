@@ -10,7 +10,7 @@ class NotesController < ApplicationController
   end
 
   def index
-    @notes = Note.all
+    @notes = current_user.notes.page(params[:page]).per(10)
 
     render("note_templates/index.html.erb")
   end
