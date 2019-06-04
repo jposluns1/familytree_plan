@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/notes/new", { :controller => "notes", :action => "new_form" })
   post("/create_note", { :controller => "notes", :action => "create_row" })
+  post("/create_note_from_connection", { :controller => "notes", :action => "create_row_from_connection" })
 
   # READ
   get("/notes", { :controller => "notes", :action => "index" })

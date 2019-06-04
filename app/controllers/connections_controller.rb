@@ -6,6 +6,7 @@ class ConnectionsController < ApplicationController
   end
 
   def show
+    @note = Note.new
     @connection = Connection.find(params.fetch("id_to_display"))
 
     render("connection_templates/show.html.erb")

@@ -33,6 +33,22 @@ class NotesController < ApplicationController
     end
   end
 
+  def create_row_from_connection
+    @note = Note.new
+
+    @note.body = params.fetch("body")
+    @note.commenter_id = params.fetch("commenter_id")
+    @note.connection_id = params.fetch("connection_id")
+
+    if @note.valid?
+      @note.save
+
+      redirect_to("/connections/#{@note.connection_id}", notice: "Note created successfully.")
+    else
+      render("note_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @note = Note.find(params.fetch("prefill_with_id"))
 
