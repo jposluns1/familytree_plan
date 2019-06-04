@@ -5,7 +5,7 @@
 <hr>
 
 <!-- Form connection start -->
-<form action="/update_connection/<%= @connection.id %>" method="post">
+<form action="/update_connection/<%= @connection.id %>" method="post" enctype="multipart/form-data">
 <!-- Form connection end -->
 
   <!-- Label and input for name start -->
@@ -27,7 +27,8 @@
     </label>
 
     <!-- Input for image start -->
-    <input type="text" id="image" name="image" class="form-control" value="<%= @connection.image %>">
+    <%= cl_image_tag(@connection.image.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="image" name="image" class="form-control">
     <!-- Input for image end -->
   </div>
   <!-- Label and input for image end -->

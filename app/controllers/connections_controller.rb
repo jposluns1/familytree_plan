@@ -22,7 +22,7 @@ class ConnectionsController < ApplicationController
     @connection = Connection.new
 
     @connection.name = params.fetch("name")
-    @connection.image = params.fetch("image")
+    @connection.image = params.fetch("image") if params.key?("image")
     @connection.location = params.fetch("location")
     @connection.birthday = params.fetch("birthday")
     @connection.user_id = params.fetch("user_id")
@@ -46,7 +46,7 @@ class ConnectionsController < ApplicationController
     @connection = Connection.find(params.fetch("id_to_modify"))
 
     @connection.name = params.fetch("name")
-    @connection.image = params.fetch("image")
+    @connection.image = params.fetch("image") if params.key?("image")
     @connection.location = params.fetch("location")
     @connection.birthday = params.fetch("birthday")
     @connection.user_id = params.fetch("user_id")

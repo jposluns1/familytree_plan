@@ -6,7 +6,7 @@
 <hr>
 
 <!-- Form connection start -->
-<form action="/create_connection" method="post">
+<form action="/create_connection" method="post" enctype="multipart/form-data">
 <!-- Form connection end -->
 
   <!-- Label and input for name start -->
@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for image start -->
-    <input type="text" id="image" name="image" class="form-control">
+    <input type="file" id="image" name="image" class="form-control">
     <!-- Input for image end -->
   </div>
   <!-- Label and input for image end -->
