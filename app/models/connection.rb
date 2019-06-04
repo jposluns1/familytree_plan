@@ -1,6 +1,9 @@
 class Connection < ApplicationRecord
   # Direct associations
 
+  has_one    :relationship_list,
+             :dependent => :destroy
+
   has_many   :notes,
              :dependent => :destroy
 
