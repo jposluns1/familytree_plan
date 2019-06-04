@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for connection_id start -->
-    <input type="text" id="connection_id" name="connection_id" class="form-control">
+    <%= select_tag(:connection_id, options_from_collection_for_select(Connection.all, :id, :name, @relationship_list.connection_id), :class => "form-control") %>
     <!-- Input for connection_id end -->
   </div>
   <!-- Label and input for connection_id end -->
