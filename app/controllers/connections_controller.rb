@@ -11,6 +11,11 @@ class ConnectionsController < ApplicationController
 
   def index
     @connections = current_user.connections.page(params[:page]).per(10)
+    @location_hash = Gmaps4rails.build_markers(@connections.where.not(:location_latitude => nil)) do |connection, marker|
+      marker.lat connection.location_latitude
+      marker.lng connection.location_longitude
+      marker.infowindow "<h5><a href='/connections/#{connection.id}'>#{connection.name}</a></h5><small>#{connection.location_formatted_address}</small>"
+    end
 
     render("connection_templates/index.html.erb")
   end
