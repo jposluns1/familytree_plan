@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "connections#index"
   # Routes for the Relationship list resource:
 
   # CREATE
