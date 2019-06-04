@@ -1,0 +1,251 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "relationship_lists_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :wife_id, "Wife" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :wife_id_gteq, :class => "form-control", :placeholder => "Wife greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :wife_id_lteq, :class => "form-control", :placeholder => "Wife less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :husband_id, "Husband" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :husband_id_gteq, :class => "form-control", :placeholder => "Husband greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :husband_id_lteq, :class => "form-control", :placeholder => "Husband less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :partner_id, "Partner" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :partner_id_gteq, :class => "form-control", :placeholder => "Partner greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :partner_id_lteq, :class => "form-control", :placeholder => "Partner less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sibling4_id, "Sibling4" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :sibling4_id_gteq, :class => "form-control", :placeholder => "Sibling4 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :sibling4_id_lteq, :class => "form-control", :placeholder => "Sibling4 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sibling3_id, "Sibling3" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :sibling3_id_gteq, :class => "form-control", :placeholder => "Sibling3 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :sibling3_id_lteq, :class => "form-control", :placeholder => "Sibling3 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sibling2_id, "Sibling2" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :sibling2_id_gteq, :class => "form-control", :placeholder => "Sibling2 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :sibling2_id_lteq, :class => "form-control", :placeholder => "Sibling2 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sibling1_id, "Sibling1" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :sibling1_id_gteq, :class => "form-control", :placeholder => "Sibling1 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :sibling1_id_lteq, :class => "form-control", :placeholder => "Sibling1 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :step_father_id, "Step father" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :step_father_id_gteq, :class => "form-control", :placeholder => "Step father greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :step_father_id_lteq, :class => "form-control", :placeholder => "Step father less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :step_mother_id, "Step mother" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :step_mother_id_gteq, :class => "form-control", :placeholder => "Step mother greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :step_mother_id_lteq, :class => "form-control", :placeholder => "Step mother less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :child5_id, "Child5" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :child5_id_gteq, :class => "form-control", :placeholder => "Child5 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :child5_id_lteq, :class => "form-control", :placeholder => "Child5 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :child4_id, "Child4" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :child4_id_gteq, :class => "form-control", :placeholder => "Child4 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :child4_id_lteq, :class => "form-control", :placeholder => "Child4 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :child3_id, "Child3" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :child3_id_gteq, :class => "form-control", :placeholder => "Child3 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :child3_id_lteq, :class => "form-control", :placeholder => "Child3 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :child2_id, "Child2" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :child2_id_gteq, :class => "form-control", :placeholder => "Child2 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :child2_id_lteq, :class => "form-control", :placeholder => "Child2 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :child1_id, "Child1" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :child1_id_gteq, :class => "form-control", :placeholder => "Child1 greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :child1_id_lteq, :class => "form-control", :placeholder => "Child1 less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :father_id, "Father" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :father_id_gteq, :class => "form-control", :placeholder => "Father greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :father_id_lteq, :class => "form-control", :placeholder => "Father less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :mother_id, "Mother" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :mother_id_gteq, :class => "form-control", :placeholder => "Mother greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :mother_id_lteq, :class => "form-control", :placeholder => "Mother less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :connection_name_cont, "Connection name contains" %>
+    <%= f.text_field :connection_name_cont, :class => "form-control", :placeholder => "Connection name contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/relationship_lists" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#relationship_lists_filters">
+  Show filters
+</a>

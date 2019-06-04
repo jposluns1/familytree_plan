@@ -10,7 +10,8 @@ class NotesController < ApplicationController
   end
 
   def index
-    @notes = current_user.notes.page(params[:page]).per(10)
+    @q = current_user.notes.ransack(params[:q])
+    @notes = @q.result(:distinct => true).includes(:user, :connection).page(params[:page]).per(10)
 
     render("note_templates/index.html.erb")
   end

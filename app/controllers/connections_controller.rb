@@ -10,7 +10,8 @@ class ConnectionsController < ApplicationController
   end
 
   def index
-    @connections = current_user.connections.page(params[:page]).per(10)
+    @q = current_user.connections.ransack(params[:q])
+    @connections = @q.result(:distinct => true).includes(:user, :notes, :relationship_list).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@connections.where.not(:location_latitude => nil)) do |connection, marker|
       marker.lat connection.location_latitude
       marker.lng connection.location_longitude

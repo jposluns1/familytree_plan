@@ -1,6 +1,7 @@
 class RelationshipListsController < ApplicationController
   def index
-    @relationship_lists = RelationshipList.page(params[:page]).per(10)
+    @q = RelationshipList.ransack(params[:q])
+    @relationship_lists = @q.result(:distinct => true).includes(:connection).page(params[:page]).per(10)
 
     render("relationship_list_templates/index.html.erb")
   end
