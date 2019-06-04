@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Notes
+
+    <a data-toggle="collapse" href="#user_notes_new_form">
+      Add note
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.notes.each do |note| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/notes/<%= note.id %>">
+          <%= note.body %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

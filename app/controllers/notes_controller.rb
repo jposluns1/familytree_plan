@@ -55,6 +55,22 @@ class NotesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @note = Note.find(params.fetch("id_to_remove"))
+
+    @note.destroy
+
+    redirect_to("/users/#{@note.commenter_id}", notice: "Note deleted successfully.")
+  end
+
+  def destroy_row_from_connection
+    @note = Note.find(params.fetch("id_to_remove"))
+
+    @note.destroy
+
+    redirect_to("/connections/#{@note.connection_id}", notice: "Note deleted successfully.")
+  end
+
   def destroy_row
     @note = Note.find(params.fetch("id_to_remove"))
 

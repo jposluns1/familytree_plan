@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_note/:id_to_remove", { :controller => "notes", :action => "destroy_row" })
+  get("/delete_note_from_connection/:id_to_remove", { :controller => "notes", :action => "destroy_row_from_connection" })
+  get("/delete_note_from_user/:id_to_remove", { :controller => "notes", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -56,6 +58,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_connection/:id_to_remove", { :controller => "connections", :action => "destroy_row" })
+  get("/delete_connection_from_user/:id_to_remove", { :controller => "connections", :action => "destroy_row_from_user" })
 
   #------------------------------
 
