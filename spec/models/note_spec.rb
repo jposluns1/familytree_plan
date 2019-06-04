@@ -11,6 +11,8 @@ RSpec.describe Note, type: :model do
     end
 
     describe "Validations" do
+
+    it { should validate_presence_of(:connection_id) }
       
     end
 end

@@ -5,4 +5,6 @@ class Note < ApplicationRecord
 
   # Validations
 
+  validates :connection_id, :presence => true
+
 end
