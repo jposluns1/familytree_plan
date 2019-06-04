@@ -13,17 +13,21 @@
 
       <!-- Edit link connection start -->
       <div class="col">
-        <a href="/connections/<%= @connection.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit connection
-        </a>
+        <% if current_user == @connection.user %>
+          <a href="/connections/<%= @connection.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit connection
+          </a>
+        <% end %>
       </div>
       <!-- Edit link connection end -->
 
       <!-- Delete link connection start -->
       <div class="col">
-        <a href="/delete_connection/<%= @connection.id %>" class="btn btn-block btn-outline-secondary">
-          Delete connection
-        </a>
+        <% if current_user == @connection.user %>
+          <a href="/delete_connection/<%= @connection.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete connection
+          </a>
+        <% end %>
       </div>
       <!-- Delete link connection end -->
     </div>
