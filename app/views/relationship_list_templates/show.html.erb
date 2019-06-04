@@ -34,7 +34,11 @@
       </dt>
       <!-- Display connection_id start -->
       <dd>
-        <%= @relationship_list.connection_id %>
+        <% if @relationship_list.connection.present? %>
+          <a href="/connections/<%= @relationship_list.connection_id %>">
+            <%= @relationship_list.connection.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display connection_id end -->
 

@@ -118,7 +118,11 @@
 
         <!-- Display relationship_list.connection_id start -->
         <td>
-          <%= relationship_list.connection.name %>
+          <% if relationship_list.connection.present? %>
+            <a href="/connections/<%= relationship_list.connection.id %>">
+              <%= relationship_list.connection.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display relationship_list.connection_id end -->
 

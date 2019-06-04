@@ -98,7 +98,11 @@
 
         <!-- Display connection.user_id start -->
         <td>
-          <%= connection.user.username %>
+          <% if connection.user.present? %>
+            <a href="/users/<%= connection.user.id %>">
+              <%= connection.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display connection.user_id end -->
 

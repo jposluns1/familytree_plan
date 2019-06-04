@@ -68,13 +68,21 @@
 
         <!-- Display note.commenter_id start -->
         <td>
-          <%= note.user.username %>
+          <% if note.user.present? %>
+            <a href="/users/<%= note.user.id %>">
+              <%= note.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display note.commenter_id end -->
 
         <!-- Display note.connection_id start -->
         <td>
-          <%= note.connection.name %>
+          <% if note.connection.present? %>
+            <a href="/connections/<%= note.connection.id %>">
+              <%= note.connection.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display note.connection_id end -->
 

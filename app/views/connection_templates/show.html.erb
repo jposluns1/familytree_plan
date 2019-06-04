@@ -76,7 +76,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @connection.user_id %>
+        <% if @connection.user.present? %>
+          <a href="/users/<%= @connection.user_id %>">
+            <%= @connection.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
