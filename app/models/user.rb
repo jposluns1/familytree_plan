@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :notes,
+             :foreign_key => "commenter_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
