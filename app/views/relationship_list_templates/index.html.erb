@@ -1,0 +1,242 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All relationship lists
+    </h1>
+
+    <a href="/relationship_lists/new" class="btn btn-block btn-outline-secondary">
+      Add a new relationship list
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Connection
+        </th>
+
+        <th>
+          Mother
+        </th>
+
+        <th>
+          Father
+        </th>
+
+        <th>
+          Child1
+        </th>
+
+        <th>
+          Child2
+        </th>
+
+        <th>
+          Child3
+        </th>
+
+        <th>
+          Child4
+        </th>
+
+        <th>
+          Child5
+        </th>
+
+        <th>
+          Step mother
+        </th>
+
+        <th>
+          Step father
+        </th>
+
+        <th>
+          Sibling1
+        </th>
+
+        <th>
+          Sibling2
+        </th>
+
+        <th>
+          Sibling3
+        </th>
+
+        <th>
+          Sibling4
+        </th>
+
+        <th>
+          Partner
+        </th>
+
+        <th>
+          Husband
+        </th>
+
+        <th>
+          Wife
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @relationship_lists.each do |relationship_list| %>
+      <tr>
+        <!-- Display relationship_list.id start -->
+        <td>
+          <%= relationship_list.id %>
+        </td>
+        <!-- Display relationship_list.id end -->
+
+        <!-- Display relationship_list.connection_id start -->
+        <td>
+          <%= relationship_list.connection_id %>
+        </td>
+        <!-- Display relationship_list.connection_id end -->
+
+        <!-- Display relationship_list.mother_id start -->
+        <td>
+          <%= relationship_list.mother_id %>
+        </td>
+        <!-- Display relationship_list.mother_id end -->
+
+        <!-- Display relationship_list.father_id start -->
+        <td>
+          <%= relationship_list.father_id %>
+        </td>
+        <!-- Display relationship_list.father_id end -->
+
+        <!-- Display relationship_list.child1_id start -->
+        <td>
+          <%= relationship_list.child1_id %>
+        </td>
+        <!-- Display relationship_list.child1_id end -->
+
+        <!-- Display relationship_list.child2_id start -->
+        <td>
+          <%= relationship_list.child2_id %>
+        </td>
+        <!-- Display relationship_list.child2_id end -->
+
+        <!-- Display relationship_list.child3_id start -->
+        <td>
+          <%= relationship_list.child3_id %>
+        </td>
+        <!-- Display relationship_list.child3_id end -->
+
+        <!-- Display relationship_list.child4_id start -->
+        <td>
+          <%= relationship_list.child4_id %>
+        </td>
+        <!-- Display relationship_list.child4_id end -->
+
+        <!-- Display relationship_list.child5_id start -->
+        <td>
+          <%= relationship_list.child5_id %>
+        </td>
+        <!-- Display relationship_list.child5_id end -->
+
+        <!-- Display relationship_list.step_mother_id start -->
+        <td>
+          <%= relationship_list.step_mother_id %>
+        </td>
+        <!-- Display relationship_list.step_mother_id end -->
+
+        <!-- Display relationship_list.step_father_id start -->
+        <td>
+          <%= relationship_list.step_father_id %>
+        </td>
+        <!-- Display relationship_list.step_father_id end -->
+
+        <!-- Display relationship_list.sibling1_id start -->
+        <td>
+          <%= relationship_list.sibling1_id %>
+        </td>
+        <!-- Display relationship_list.sibling1_id end -->
+
+        <!-- Display relationship_list.sibling2_id start -->
+        <td>
+          <%= relationship_list.sibling2_id %>
+        </td>
+        <!-- Display relationship_list.sibling2_id end -->
+
+        <!-- Display relationship_list.sibling3_id start -->
+        <td>
+          <%= relationship_list.sibling3_id %>
+        </td>
+        <!-- Display relationship_list.sibling3_id end -->
+
+        <!-- Display relationship_list.sibling4_id start -->
+        <td>
+          <%= relationship_list.sibling4_id %>
+        </td>
+        <!-- Display relationship_list.sibling4_id end -->
+
+        <!-- Display relationship_list.partner_id start -->
+        <td>
+          <%= relationship_list.partner_id %>
+        </td>
+        <!-- Display relationship_list.partner_id end -->
+
+        <!-- Display relationship_list.husband_id start -->
+        <td>
+          <%= relationship_list.husband_id %>
+        </td>
+        <!-- Display relationship_list.husband_id end -->
+
+        <!-- Display relationship_list.wife_id start -->
+        <td>
+          <%= relationship_list.wife_id %>
+        </td>
+        <!-- Display relationship_list.wife_id end -->
+
+        <!-- Display relationship_list.created_at start -->
+        <td>
+          <%= time_ago_in_words(relationship_list.created_at) %> ago
+        </td>
+        <!-- Display relationship_list.created_at end -->
+
+        <!-- Display relationship_list.updated_at start -->
+        <td>
+          <%= time_ago_in_words(relationship_list.updated_at) %> ago
+        </td>
+        <!-- Display relationship_list.updated_at end -->
+
+        <td>
+          <a href="/relationship_lists/<%= relationship_list.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

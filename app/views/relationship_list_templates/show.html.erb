@@ -1,0 +1,208 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Relationship list #<%= @relationship_list.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/relationship_lists" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link relationship_list start -->
+      <div class="col">
+        <a href="/relationship_lists/<%= @relationship_list.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit relationship list
+        </a>
+      </div>
+      <!-- Edit link relationship_list end -->
+
+      <!-- Delete link relationship_list start -->
+      <div class="col">
+        <a href="/delete_relationship_list/<%= @relationship_list.id %>" class="btn btn-block btn-outline-secondary">
+          Delete relationship list
+        </a>
+      </div>
+      <!-- Delete link relationship_list end -->
+    </div>
+
+    <dl>
+      <dt>
+        Connection
+      </dt>
+      <!-- Display connection_id start -->
+      <dd>
+        <%= @relationship_list.connection_id %>
+      </dd>
+      <!-- Display connection_id end -->
+
+      <dt>
+        Mother
+      </dt>
+      <!-- Display mother_id start -->
+      <dd>
+        <%= @relationship_list.mother_id %>
+      </dd>
+      <!-- Display mother_id end -->
+
+      <dt>
+        Father
+      </dt>
+      <!-- Display father_id start -->
+      <dd>
+        <%= @relationship_list.father_id %>
+      </dd>
+      <!-- Display father_id end -->
+
+      <dt>
+        Child1
+      </dt>
+      <!-- Display child1_id start -->
+      <dd>
+        <%= @relationship_list.child1_id %>
+      </dd>
+      <!-- Display child1_id end -->
+
+      <dt>
+        Child2
+      </dt>
+      <!-- Display child2_id start -->
+      <dd>
+        <%= @relationship_list.child2_id %>
+      </dd>
+      <!-- Display child2_id end -->
+
+      <dt>
+        Child3
+      </dt>
+      <!-- Display child3_id start -->
+      <dd>
+        <%= @relationship_list.child3_id %>
+      </dd>
+      <!-- Display child3_id end -->
+
+      <dt>
+        Child4
+      </dt>
+      <!-- Display child4_id start -->
+      <dd>
+        <%= @relationship_list.child4_id %>
+      </dd>
+      <!-- Display child4_id end -->
+
+      <dt>
+        Child5
+      </dt>
+      <!-- Display child5_id start -->
+      <dd>
+        <%= @relationship_list.child5_id %>
+      </dd>
+      <!-- Display child5_id end -->
+
+      <dt>
+        Step mother
+      </dt>
+      <!-- Display step_mother_id start -->
+      <dd>
+        <%= @relationship_list.step_mother_id %>
+      </dd>
+      <!-- Display step_mother_id end -->
+
+      <dt>
+        Step father
+      </dt>
+      <!-- Display step_father_id start -->
+      <dd>
+        <%= @relationship_list.step_father_id %>
+      </dd>
+      <!-- Display step_father_id end -->
+
+      <dt>
+        Sibling1
+      </dt>
+      <!-- Display sibling1_id start -->
+      <dd>
+        <%= @relationship_list.sibling1_id %>
+      </dd>
+      <!-- Display sibling1_id end -->
+
+      <dt>
+        Sibling2
+      </dt>
+      <!-- Display sibling2_id start -->
+      <dd>
+        <%= @relationship_list.sibling2_id %>
+      </dd>
+      <!-- Display sibling2_id end -->
+
+      <dt>
+        Sibling3
+      </dt>
+      <!-- Display sibling3_id start -->
+      <dd>
+        <%= @relationship_list.sibling3_id %>
+      </dd>
+      <!-- Display sibling3_id end -->
+
+      <dt>
+        Sibling4
+      </dt>
+      <!-- Display sibling4_id start -->
+      <dd>
+        <%= @relationship_list.sibling4_id %>
+      </dd>
+      <!-- Display sibling4_id end -->
+
+      <dt>
+        Partner
+      </dt>
+      <!-- Display partner_id start -->
+      <dd>
+        <%= @relationship_list.partner_id %>
+      </dd>
+      <!-- Display partner_id end -->
+
+      <dt>
+        Husband
+      </dt>
+      <!-- Display husband_id start -->
+      <dd>
+        <%= @relationship_list.husband_id %>
+      </dd>
+      <!-- Display husband_id end -->
+
+      <dt>
+        Wife
+      </dt>
+      <!-- Display wife_id start -->
+      <dd>
+        <%= @relationship_list.wife_id %>
+      </dd>
+      <!-- Display wife_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@relationship_list.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@relationship_list.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

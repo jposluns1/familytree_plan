@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Relationship list resource:
+
+  # CREATE
+  get("/relationship_lists/new", { :controller => "relationship_lists", :action => "new_form" })
+  post("/create_relationship_list", { :controller => "relationship_lists", :action => "create_row" })
+
+  # READ
+  get("/relationship_lists", { :controller => "relationship_lists", :action => "index" })
+  get("/relationship_lists/:id_to_display", { :controller => "relationship_lists", :action => "show" })
+
+  # UPDATE
+  get("/relationship_lists/:prefill_with_id/edit", { :controller => "relationship_lists", :action => "edit_form" })
+  post("/update_relationship_list/:id_to_modify", { :controller => "relationship_lists", :action => "update_row" })
+
+  # DELETE
+  get("/delete_relationship_list/:id_to_remove", { :controller => "relationship_lists", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Note resource:
 
   # CREATE
