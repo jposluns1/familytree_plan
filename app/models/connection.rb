@@ -5,4 +5,6 @@ class Connection < ApplicationRecord
 
   # Validations
 
+  validates :image, :presence => true
+
 end
