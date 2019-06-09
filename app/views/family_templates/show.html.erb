@@ -1,0 +1,78 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Family #<%= @family.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/families" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <% if current_user == @family.user %>
+          <a href="/families/<%= @family.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit family
+          </a>
+        <% end %>
+      </div>
+
+      <div class="col">
+        <% if current_user == @family.user %>
+          <a href="/delete_family/<%= @family.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete family
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Family name
+      </dt>
+      <dd>
+        <%= @family.family_name %>
+      </dd>
+
+      <dt>
+        Family description
+      </dt>
+      <dd>
+        <%= @family.family_description %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <% if @family.user.present? %>
+          <a href="/users/<%= @family.user_id %>">
+            <%= @family.user.username %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@family.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@family.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "family_templates/family_family_member_matches" %>
+  </div>
+</div>

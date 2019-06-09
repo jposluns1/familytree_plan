@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem "dotenv-rails"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -58,10 +57,6 @@ gem 'devise'
 gem 'draft_generators', git: 'https://github.com/firstdraft/draft_generators.git'
 gem 'web_git', github: 'firstdraft/web_git'
 gem 'activeadmin', '1.2.1'
-gem 'carrierwave'
-gem 'cloudinary'
-gem 'gmaps4rails'
-gem 'underscore-rails'
 gem "rollbar"
 gem "kaminari"
 gem "bootstrap4-kaminari-views"

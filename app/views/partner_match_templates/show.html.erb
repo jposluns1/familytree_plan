@@ -1,0 +1,66 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Partner match #<%= @partner_match.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/partner_matches" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/partner_matches/<%= @partner_match.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit partner match
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_partner_match/<%= @partner_match.id %>" class="btn btn-block btn-outline-secondary">
+          Delete partner match
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Member id 1
+      </dt>
+      <dd>
+        <% if @partner_match.member.present? %>
+          <a href="/members/<%= @partner_match.member_id_1 %>">
+            <%= @partner_match.member.first_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Member id 2
+      </dt>
+      <dd>
+        <% if @partner_match.member_2.present? %>
+          <a href="/members/<%= @partner_match.member_id_2 %>">
+            <%= @partner_match.member_2.first_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@partner_match.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@partner_match.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

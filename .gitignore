@@ -15,5 +15,3 @@
 /vendor/bundle
 !/vendor/assets/
 /.env*
-
-public/uploads

@@ -1,10 +1,9 @@
 class Note < ApplicationRecord
   # Direct associations
 
-  belongs_to :connection
+  belongs_to :member
 
-  belongs_to :user,
-             :foreign_key => "commenter_id"
+  belongs_to :user
 
   # Indirect associations
 
@@ -12,8 +11,6 @@ class Note < ApplicationRecord
 
   validates :body, :presence => true
 
-  validates :commenter_id, :presence => true
-
-  validates :connection_id, :presence => true
+  validates :member_id, :presence => true
 
 end

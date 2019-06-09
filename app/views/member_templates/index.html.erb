@@ -1,0 +1,189 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All members
+    </h1>
+
+    <a href="/members/new" class="btn btn-block btn-outline-secondary">
+      Add a new member
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "member_templates/members_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          First name
+        </th>
+
+        <th>
+          Last name
+        </th>
+
+        <th>
+          Relationship description
+        </th>
+
+        <th>
+          Birth month
+        </th>
+
+        <th>
+          Birth day
+        </th>
+
+        <th>
+          Birth year
+        </th>
+
+        <th>
+          Gender
+        </th>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          Anniversary month
+        </th>
+
+        <th>
+          Anniversary day
+        </th>
+
+        <th>
+          Anniversary year
+        </th>
+
+        <th>
+          Passed
+        </th>
+
+        <th>
+          Ex
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @members.each do |member| %>
+      <tr>
+        <td>
+          <%= member.id %>
+        </td>
+
+        <td>
+          <% if member.user.present? %>
+            <a href="/users/<%= member.user.id %>">
+              <%= member.user.username %>
+            </a>
+          <% end %>
+        </td>
+
+        <td>
+          <%= member.first_name %>
+        </td>
+
+        <td>
+          <%= member.last_name %>
+        </td>
+
+        <td>
+          <%= member.relationship_description %>
+        </td>
+
+        <td>
+          <%= member.birth_month %>
+        </td>
+
+        <td>
+          <%= member.birth_day %>
+        </td>
+
+        <td>
+          <%= member.birth_year %>
+        </td>
+
+        <td>
+          <%= member.gender %>
+        </td>
+
+        <td>
+          <%= member.location %>
+        </td>
+
+        <td>
+          <%= member.anniversary_month %>
+        </td>
+
+        <td>
+          <%= member.anniversary_day %>
+        </td>
+
+        <td>
+          <%= member.anniversary_year %>
+        </td>
+
+        <td>
+          <%= member.passed %>
+        </td>
+
+        <td>
+          <%= member.ex %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(member.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(member.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/members/<%= member.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @members, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>

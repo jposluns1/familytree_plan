@@ -1,0 +1,24 @@
+<form action="/create_family_member_match_from_member" method="post">
+
+  <div class="form-group">
+    <label for="family_id">
+      Family
+    </label>
+
+    <%= select_tag(:family_id, options_from_collection_for_select(Family.all, :id, :family_name, @family_member_match.family_id), :class => "form-control") %>
+  </div>
+
+  <input type="hidden" name="member_id" value="<%= @member.id %>">
+
+  <div class="form-group">
+    <label for="generation">
+      Generation
+    </label>
+
+    <input type="text" id="generation" name="generation" class="form-control" value="<%= @family_member_match.generation %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create family member match
+  </button>
+</form>
