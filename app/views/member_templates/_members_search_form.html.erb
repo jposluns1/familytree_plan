@@ -1,0 +1,177 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "members_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :first_name_cont, "First name contains" %>
+    <%= f.text_field :first_name_cont, :class => "form-control", :placeholder => "First name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ex_eq, "Ex" %>
+    <div>
+      <label class="radio-inline">
+        <%= f.radio_button :ex_eq, "1", checked: ((params[:q] && params[:q][:ex_eq]) == "1" ? "checked" : "") %> Yes
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :ex_eq, "0", checked: ((params[:q] && params[:q][:ex_eq]) == "0" ? "checked" : "")%> No
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :ex_eq, ""%> Either
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :passed_eq, "Passed" %>
+    <div>
+      <label class="radio-inline">
+        <%= f.radio_button :passed_eq, "1", checked: ((params[:q] && params[:q][:passed_eq]) == "1" ? "checked" : "") %> Yes
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :passed_eq, "0", checked: ((params[:q] && params[:q][:passed_eq]) == "0" ? "checked" : "")%> No
+      </label>
+      <label class="radio-inline">
+        <%= f.radio_button :passed_eq, ""%> Either
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :anniversary_year, "Anniversary year" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :anniversary_year_gteq, :class => "form-control", :placeholder => "Anniversary year greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :anniversary_year_lteq, :class => "form-control", :placeholder => "Anniversary year less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :anniversary_day, "Anniversary day" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :anniversary_day_gteq, :class => "form-control", :placeholder => "Anniversary day greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :anniversary_day_lteq, :class => "form-control", :placeholder => "Anniversary day less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :anniversary_month_cont, "Anniversary month contains" %>
+    <%= f.text_field :anniversary_month_cont, :class => "form-control", :placeholder => "Anniversary month contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location_cont, "Location contains" %>
+    <%= f.text_field :location_cont, :class => "form-control", :placeholder => "Location contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :gender_cont, "Gender contains" %>
+    <%= f.text_field :gender_cont, :class => "form-control", :placeholder => "Gender contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :birth_year, "Birth year" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :birth_year_gteq, :class => "form-control", :placeholder => "Birth year greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :birth_year_lteq, :class => "form-control", :placeholder => "Birth year less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :birth_day, "Birth day" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :birth_day_gteq, :class => "form-control", :placeholder => "Birth day greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :birth_day_lteq, :class => "form-control", :placeholder => "Birth day less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :birth_month_cont, "Birth month contains" %>
+    <%= f.text_field :birth_month_cont, :class => "form-control", :placeholder => "Birth month contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :relationship_description_cont, "Relationship description contains" %>
+    <%= f.text_field :relationship_description_cont, :class => "form-control", :placeholder => "Relationship description contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name_cont, "Last name contains" %>
+    <%= f.text_field :last_name_cont, :class => "form-control", :placeholder => "Last name contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :user_username_cont, "User username contains" %>
+    <%= f.text_field :user_username_cont, :class => "form-control", :placeholder => "User username contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notes_body_cont, "Note body contains" %>
+    <%= f.text_field :notes_body_cont, :class => "form-control", :placeholder => "Note body contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/members" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#members_filters">
+  Show filters
+</a>

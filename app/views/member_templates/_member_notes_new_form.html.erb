@@ -1,0 +1,18 @@
+<form action="/create_note_from_member" method="post">
+
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <textarea id="body" name="body" class="form-control" rows="3"><%= @note.body %></textarea>
+  </div>
+
+  <input type="hidden" name="member_id" value="<%= @member.id %>">
+
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create note
+  </button>
+</form>

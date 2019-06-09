@@ -14,14 +14,14 @@
     <textarea id="body" name="body" class="form-control" rows="3"><%= @note.body %></textarea>
   </div>
 
-
   <div class="form-group">
-    <label for="connection_id">
-      Connection
+    <label for="member_id">
+      Member
     </label>
 
-    <%= select_tag(:connection_id, options_from_collection_for_select(Connection.all, :id, :name, @note.connection_id), :class => "form-control") %>
+    <%= select_tag(:member_id, options_from_collection_for_select(Member.all, :id, :first_name, @note.member_id), :class => "form-control") %>
   </div>
+
 
   <button class="btn btn-block btn-outline-secondary">
     Update note
