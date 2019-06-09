@@ -1,11 +1,13 @@
 class User < ApplicationRecord
   # Direct associations
 
-  has_many   :connections,
+  has_many   :notes,
              :dependent => :destroy
 
-  has_many   :notes,
-             :foreign_key => "commenter_id",
+  has_many   :families,
+             :dependent => :destroy
+
+  has_many   :members,
              :dependent => :destroy
 
   # Indirect associations

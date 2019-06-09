@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :current_user_must_be_note_user, :only => [:edit_form, :update_row, :destroy_row]
+  before_action :current_user_must_be_note_user, :only => [:show, :edit_form, :update_row, :destroy_row]
 
   def current_user_must_be_note_user
     note = Note.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
@@ -11,7 +11,7 @@ class NotesController < ApplicationController
 
   def index
     @q = current_user.notes.ransack(params[:q])
-    @notes = @q.result(:distinct => true).includes(:user, :connection).page(params[:page]).per(10)
+    @notes = @q.result(:distinct => true).includes(:user, :member).page(params[:page]).per(10)
 
     render("note_templates/index.html.erb")
   end
@@ -32,8 +32,8 @@ class NotesController < ApplicationController
     @note = Note.new
 
     @note.body = params.fetch("body")
-    @note.commenter_id = params.fetch("commenter_id")
-    @note.connection_id = params.fetch("connection_id")
+    @note.member_id = params.fetch("member_id")
+    @note.user_id = params.fetch("user_id")
 
     if @note.valid?
       @note.save
@@ -44,17 +44,17 @@ class NotesController < ApplicationController
     end
   end
 
-  def create_row_from_connection
+  def create_row_from_member
     @note = Note.new
 
     @note.body = params.fetch("body")
-    @note.commenter_id = params.fetch("commenter_id")
-    @note.connection_id = params.fetch("connection_id")
+    @note.member_id = params.fetch("member_id")
+    @note.user_id = params.fetch("user_id")
 
     if @note.valid?
       @note.save
 
-      redirect_to("/connections/#{@note.connection_id}", notice: "Note created successfully.")
+      redirect_to("/members/#{@note.member_id}", notice: "Note created successfully.")
     else
       render("note_templates/new_form_with_errors.html.erb")
     end
@@ -70,8 +70,8 @@ class NotesController < ApplicationController
     @note = Note.find(params.fetch("id_to_modify"))
 
     @note.body = params.fetch("body")
+    @note.member_id = params.fetch("member_id")
     
-    @note.connection_id = params.fetch("connection_id")
 
     if @note.valid?
       @note.save
@@ -87,15 +87,15 @@ class NotesController < ApplicationController
 
     @note.destroy
 
-    redirect_to("/users/#{@note.commenter_id}", notice: "Note deleted successfully.")
+    redirect_to("/users/#{@note.user_id}", notice: "Note deleted successfully.")
   end
 
-  def destroy_row_from_connection
+  def destroy_row_from_member
     @note = Note.find(params.fetch("id_to_remove"))
 
     @note.destroy
 
-    redirect_to("/connections/#{@note.connection_id}", notice: "Note deleted successfully.")
+    redirect_to("/members/#{@note.member_id}", notice: "Note deleted successfully.")
   end
 
   def destroy_row

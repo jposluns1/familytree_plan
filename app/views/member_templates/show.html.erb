@@ -1,0 +1,161 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Member #<%= @member.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/members" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <% if current_user == @member.user %>
+          <a href="/members/<%= @member.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit member
+          </a>
+        <% end %>
+      </div>
+
+      <div class="col">
+        <% if current_user == @member.user %>
+          <a href="/delete_member/<%= @member.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete member
+          </a>
+        <% end %>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <% if @member.user.present? %>
+          <a href="/users/<%= @member.user_id %>">
+            <%= @member.user.username %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        First name
+      </dt>
+      <dd>
+        <%= @member.first_name %>
+      </dd>
+
+      <dt>
+        Last name
+      </dt>
+      <dd>
+        <%= @member.last_name %>
+      </dd>
+
+      <dt>
+        Relationship description
+      </dt>
+      <dd>
+        <%= @member.relationship_description %>
+      </dd>
+
+      <dt>
+        Birth month
+      </dt>
+      <dd>
+        <%= @member.birth_month %>
+      </dd>
+
+      <dt>
+        Birth day
+      </dt>
+      <dd>
+        <%= @member.birth_day %>
+      </dd>
+
+      <dt>
+        Birth year
+      </dt>
+      <dd>
+        <%= @member.birth_year %>
+      </dd>
+
+      <dt>
+        Gender
+      </dt>
+      <dd>
+        <%= @member.gender %>
+      </dd>
+
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= @member.location %>
+      </dd>
+
+      <dt>
+        Anniversary month
+      </dt>
+      <dd>
+        <%= @member.anniversary_month %>
+      </dd>
+
+      <dt>
+        Anniversary day
+      </dt>
+      <dd>
+        <%= @member.anniversary_day %>
+      </dd>
+
+      <dt>
+        Anniversary year
+      </dt>
+      <dd>
+        <%= @member.anniversary_year %>
+      </dd>
+
+      <dt>
+        Passed
+      </dt>
+      <dd>
+        <%= @member.passed %>
+      </dd>
+
+      <dt>
+        Ex
+      </dt>
+      <dd>
+        <%= @member.ex %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@member.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@member.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "member_templates/member_notes" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "member_templates/member_family_member_matches" %>
+  </div>
+</div>

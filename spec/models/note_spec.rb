@@ -4,7 +4,7 @@ RSpec.describe Note, type: :model do
   
     describe "Direct Associations" do
 
-    it { should belong_to(:connection) }
+    it { should belong_to(:member) }
 
     it { should belong_to(:user) }
 
@@ -18,9 +18,7 @@ RSpec.describe Note, type: :model do
 
     it { should validate_presence_of(:body) }
 
-    it { should validate_presence_of(:commenter_id) }
-
-    it { should validate_presence_of(:connection_id) }
+    it { should validate_presence_of(:member_id) }
       
     end
 end

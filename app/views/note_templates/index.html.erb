@@ -33,11 +33,11 @@
         </th>
 
         <th>
-          Commenter
+          Member
         </th>
 
         <th>
-          Connection
+          User
         </th>
 
         <th>
@@ -63,17 +63,17 @@
         </td>
 
         <td>
-          <% if note.user.present? %>
-            <a href="/users/<%= note.user.id %>">
-              <%= note.user.username %>
+          <% if note.member.present? %>
+            <a href="/members/<%= note.member.id %>">
+              <%= note.member.first_name %>
             </a>
           <% end %>
         </td>
 
         <td>
-          <% if note.connection.present? %>
-            <a href="/connections/<%= note.connection.id %>">
-              <%= note.connection.name %>
+          <% if note.user.present? %>
+            <a href="/users/<%= note.user.id %>">
+              <%= note.user.username %>
             </a>
           <% end %>
         </td>
