@@ -1,0 +1,125 @@
+<h1>
+  Add a new member
+</h1>
+
+
+<hr>
+
+<form action="/create_member" method="post">
+
+  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+  <div class="form-group">
+    <label for="first_name">
+      First name
+    </label>
+
+    <input type="text" id="first_name" name="first_name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="last_name">
+      Last name
+    </label>
+
+    <input type="text" id="last_name" name="last_name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="relationship_description">
+      Relationship description
+    </label>
+
+    <input type="text" id="relationship_description" name="relationship_description" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="birth_month">
+      Birth month
+    </label>
+
+    <input type="text" id="birth_month" name="birth_month" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="birth_day">
+      Birth day
+    </label>
+
+    <input type="text" id="birth_day" name="birth_day" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="birth_year">
+      Birth year
+    </label>
+
+    <input type="text" id="birth_year" name="birth_year" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="gender">
+      Gender
+    </label>
+
+    <input type="text" id="gender" name="gender" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <input type="text" id="location" name="location" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="anniversary_month">
+      Anniversary month
+    </label>
+
+    <input type="text" id="anniversary_month" name="anniversary_month" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="anniversary_day">
+      Anniversary day
+    </label>
+
+    <input type="text" id="anniversary_day" name="anniversary_day" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="anniversary_year">
+      Anniversary year
+    </label>
+
+    <input type="text" id="anniversary_year" name="anniversary_year" class="form-control">
+  </div>
+
+  <div class="form-check">
+    <input type="hidden" value="0" name="passed">
+    <input id="passed" class="form-check-input" name="passed" type="checkbox">
+    <label for="passed" class="form-check-label">
+      Passed
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input type="hidden" value="0" name="ex">
+    <input id="ex" class="form-check-input" name="ex" type="checkbox">
+    <label for="ex" class="form-check-label">
+      Ex
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create member
+  </button>
+</form>
+
+<hr>
+
+<a href="/members">
+  Go back
+</a>

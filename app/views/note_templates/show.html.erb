@@ -37,23 +37,23 @@
       </dd>
 
       <dt>
-        Commenter
+        Member
       </dt>
       <dd>
-        <% if @note.user.present? %>
-          <a href="/users/<%= @note.commenter_id %>">
-            <%= @note.user.username %>
+        <% if @note.member.present? %>
+          <a href="/members/<%= @note.member_id %>">
+            <%= @note.member.first_name %>
           </a>
         <% end %>
       </dd>
 
       <dt>
-        Connection
+        User
       </dt>
       <dd>
-        <% if @note.connection.present? %>
-          <a href="/connections/<%= @note.connection_id %>">
-            <%= @note.connection.name %>
+        <% if @note.user.present? %>
+          <a href="/users/<%= @note.user_id %>">
+            <%= @note.user.username %>
           </a>
         <% end %>
       </dd>

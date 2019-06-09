@@ -1,0 +1,50 @@
+<% if @family_member_match.errors.any? %>
+  <% @family_member_match.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit family member match #<%= @family_member_match.id %>
+</h1>
+
+<hr>
+
+<form action="/update_family_member_match/<%= @family_member_match.id %>" method="post">
+
+  <div class="form-group">
+    <label for="family_id">
+      Family
+    </label>
+
+    <%= select_tag(:family_id, options_from_collection_for_select(Family.all, :id, :family_name, @family_member_match.family_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="member_id">
+      Member
+    </label>
+
+    <%= select_tag(:member_id, options_from_collection_for_select(Member.all, :id, :first_name, @family_member_match.member_id), :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <label for="generation">
+      Generation
+    </label>
+
+    <input type="text" id="generation" name="generation" class="form-control" value="<%= @family_member_match.generation %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update family member match
+  </button>
+</form>
+
+<hr>
+
+<a href="/family_member_matches">
+  Go back
+</a>

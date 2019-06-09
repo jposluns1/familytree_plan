@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Family Member Matches
+
+    <a data-toggle="collapse" href="#member_family_member_matches_new_form">
+      Add family member match
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @member.family_member_matches.each do |family_member_match| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/family_member_matches/<%= family_member_match.id %>">
+          <%= family_member_match.family_id %>
+        </a>
+
+        <a href="/delete_family_member_match_from_member/<%= family_member_match.id %>">
+          Delete
+        </a>
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="member_family_member_matches_new_form">
+        <%= render partial: "member_templates/member_family_member_matches_new_form" %>
+      </div>
+    </div>
+
+  </ul>
+</div>

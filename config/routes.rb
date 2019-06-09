@@ -1,23 +1,66 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "connections#index"
-  # Routes for the Relationship list resource:
+  root :to => "members#index"
+  # Routes for the Family member match resource:
 
   # CREATE
-  get("/relationship_lists/new", { :controller => "relationship_lists", :action => "new_form" })
-  post("/create_relationship_list", { :controller => "relationship_lists", :action => "create_row" })
+  get("/family_member_matches/new", { :controller => "family_member_matches", :action => "new_form" })
+  post("/create_family_member_match", { :controller => "family_member_matches", :action => "create_row" })
+  post("/create_family_member_match_from_family", { :controller => "family_member_matches", :action => "create_row_from_family" })
+  post("/create_family_member_match_from_member", { :controller => "family_member_matches", :action => "create_row_from_member" })
 
   # READ
-  get("/relationship_lists", { :controller => "relationship_lists", :action => "index" })
-  get("/relationship_lists/:id_to_display", { :controller => "relationship_lists", :action => "show" })
+  get("/family_member_matches", { :controller => "family_member_matches", :action => "index" })
+  get("/family_member_matches/:id_to_display", { :controller => "family_member_matches", :action => "show" })
 
   # UPDATE
-  get("/relationship_lists/:prefill_with_id/edit", { :controller => "relationship_lists", :action => "edit_form" })
-  post("/update_relationship_list/:id_to_modify", { :controller => "relationship_lists", :action => "update_row" })
+  get("/family_member_matches/:prefill_with_id/edit", { :controller => "family_member_matches", :action => "edit_form" })
+  post("/update_family_member_match/:id_to_modify", { :controller => "family_member_matches", :action => "update_row" })
 
   # DELETE
-  get("/delete_relationship_list/:id_to_remove", { :controller => "relationship_lists", :action => "destroy_row" })
+  get("/delete_family_member_match/:id_to_remove", { :controller => "family_member_matches", :action => "destroy_row" })
+  get("/delete_family_member_match_from_family/:id_to_remove", { :controller => "family_member_matches", :action => "destroy_row_from_family" })
+  get("/delete_family_member_match_from_member/:id_to_remove", { :controller => "family_member_matches", :action => "destroy_row_from_member" })
+
+  #------------------------------
+
+  # Routes for the Family resource:
+
+  # CREATE
+  get("/families/new", { :controller => "families", :action => "new_form" })
+  post("/create_family", { :controller => "families", :action => "create_row" })
+
+  # READ
+  get("/families", { :controller => "families", :action => "index" })
+  get("/families/:id_to_display", { :controller => "families", :action => "show" })
+
+  # UPDATE
+  get("/families/:prefill_with_id/edit", { :controller => "families", :action => "edit_form" })
+  post("/update_family/:id_to_modify", { :controller => "families", :action => "update_row" })
+
+  # DELETE
+  get("/delete_family/:id_to_remove", { :controller => "families", :action => "destroy_row" })
+  get("/delete_family_from_user/:id_to_remove", { :controller => "families", :action => "destroy_row_from_user" })
+
+  #------------------------------
+
+  # Routes for the Partner match resource:
+
+  # CREATE
+  get("/partner_matches/new", { :controller => "partner_matches", :action => "new_form" })
+  post("/create_partner_match", { :controller => "partner_matches", :action => "create_row" })
+
+  # READ
+  get("/partner_matches", { :controller => "partner_matches", :action => "index" })
+  get("/partner_matches/:id_to_display", { :controller => "partner_matches", :action => "show" })
+
+  # UPDATE
+  get("/partner_matches/:prefill_with_id/edit", { :controller => "partner_matches", :action => "edit_form" })
+  post("/update_partner_match/:id_to_modify", { :controller => "partner_matches", :action => "update_row" })
+
+  # DELETE
+  get("/delete_partner_match/:id_to_remove", { :controller => "partner_matches", :action => "destroy_row" })
 
   #------------------------------
 
@@ -26,7 +69,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/notes/new", { :controller => "notes", :action => "new_form" })
   post("/create_note", { :controller => "notes", :action => "create_row" })
-  post("/create_note_from_connection", { :controller => "notes", :action => "create_row_from_connection" })
+  post("/create_note_from_member", { :controller => "notes", :action => "create_row_from_member" })
 
   # READ
   get("/notes", { :controller => "notes", :action => "index" })
@@ -38,28 +81,28 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_note/:id_to_remove", { :controller => "notes", :action => "destroy_row" })
-  get("/delete_note_from_connection/:id_to_remove", { :controller => "notes", :action => "destroy_row_from_connection" })
+  get("/delete_note_from_member/:id_to_remove", { :controller => "notes", :action => "destroy_row_from_member" })
   get("/delete_note_from_user/:id_to_remove", { :controller => "notes", :action => "destroy_row_from_user" })
 
   #------------------------------
 
-  # Routes for the Connection resource:
+  # Routes for the Member resource:
 
   # CREATE
-  get("/connections/new", { :controller => "connections", :action => "new_form" })
-  post("/create_connection", { :controller => "connections", :action => "create_row" })
+  get("/members/new", { :controller => "members", :action => "new_form" })
+  post("/create_member", { :controller => "members", :action => "create_row" })
 
   # READ
-  get("/connections", { :controller => "connections", :action => "index" })
-  get("/connections/:id_to_display", { :controller => "connections", :action => "show" })
+  get("/members", { :controller => "members", :action => "index" })
+  get("/members/:id_to_display", { :controller => "members", :action => "show" })
 
   # UPDATE
-  get("/connections/:prefill_with_id/edit", { :controller => "connections", :action => "edit_form" })
-  post("/update_connection/:id_to_modify", { :controller => "connections", :action => "update_row" })
+  get("/members/:prefill_with_id/edit", { :controller => "members", :action => "edit_form" })
+  post("/update_member/:id_to_modify", { :controller => "members", :action => "update_row" })
 
   # DELETE
-  get("/delete_connection/:id_to_remove", { :controller => "connections", :action => "destroy_row" })
-  get("/delete_connection_from_user/:id_to_remove", { :controller => "connections", :action => "destroy_row_from_user" })
+  get("/delete_member/:id_to_remove", { :controller => "members", :action => "destroy_row" })
+  get("/delete_member_from_user/:id_to_remove", { :controller => "members", :action => "destroy_row_from_user" })
 
   #------------------------------
 

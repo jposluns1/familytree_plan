@@ -4,9 +4,11 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
-    it { should have_many(:connections) }
-
     it { should have_many(:notes) }
+
+    it { should have_many(:families) }
+
+    it { should have_many(:members) }
 
     end
 

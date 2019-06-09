@@ -1,0 +1,43 @@
+<% if @family.errors.any? %>
+  <% @family.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit family #<%= @family.id %>
+</h1>
+
+<hr>
+
+<form action="/update_family/<%= @family.id %>" method="post">
+
+  <div class="form-group">
+    <label for="family_name">
+      Family name
+    </label>
+
+    <input type="text" id="family_name" name="family_name" class="form-control" value="<%= @family.family_name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="family_description">
+      Family description
+    </label>
+
+    <textarea id="family_description" name="family_description" class="form-control" rows="3"><%= @family.family_description %></textarea>
+  </div>
+
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update family
+  </button>
+</form>
+
+<hr>
+
+<a href="/families">
+  Go back
+</a>

@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Family member match #<%= @family_member_match.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/family_member_matches" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/family_member_matches/<%= @family_member_match.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit family member match
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_family_member_match/<%= @family_member_match.id %>" class="btn btn-block btn-outline-secondary">
+          Delete family member match
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Family
+      </dt>
+      <dd>
+        <% if @family_member_match.family.present? %>
+          <a href="/families/<%= @family_member_match.family_id %>">
+            <%= @family_member_match.family.family_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Member
+      </dt>
+      <dd>
+        <% if @family_member_match.member.present? %>
+          <a href="/members/<%= @family_member_match.member_id %>">
+            <%= @family_member_match.member.first_name %>
+          </a>
+        <% end %>
+      </dd>
+
+      <dt>
+        Generation
+      </dt>
+      <dd>
+        <%= @family_member_match.generation %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@family_member_match.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@family_member_match.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
